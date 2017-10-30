@@ -23,7 +23,16 @@ Make sure you have Java and Maven installed.  Also, install the [MySQL](https://
 
 You have generated a spring-hibernate-template.war file in the *target* folder that it is in *todojava* root folder project.
 
-Before starting your server, you have to run createtables.sql file (it is inside sql folder) on MySQL.  
+Before starting your server, you have to run createtables.sql file (it is inside sql folder) on MySQL. 
+
+Change *username* or *password* database property in the xml file to your local settings for MySQL. The file it is *src/main/resources/applicationContext.xml*:
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+      <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+      <property name="url" value="jdbc:mysql://localhost:3306/desarrollo"/>
+      <property name="username" value="root"/>
+      <property name="password" value="root"/>
+    </bean>	 
 
 Copy the spring-hibernate-template.war from *target* folder to the location you deploy web applications in Tomcat (default folder is *$CATALINA_BASE/webapps*). 
 Start tomcat server on windos:
@@ -74,6 +83,15 @@ Execute maven to clean and build the application.
 Refresh the project in eclipse.
 
 Before starting your server, you have to run createtables.sql file (it is inside sql folder) on MySQL.  
+
+Change *username* or *password* database property in the xml file to your local settings for MySQL. The file it is *src/main/resources/applicationContext.xml*:
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+      <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+      <property name="url" value="jdbc:mysql://localhost:3306/desarrollo"/>
+      <property name="username" value="root"/>
+      <property name="password" value="root"/>
+    </bean>	 
 
 Run the application in your tomcat server from eclipse.
 
