@@ -200,7 +200,7 @@ angular
 		  "login": {
 				"username": "Username",
 				"password": "Password",
-				"submit": "Log In",
+				"submit": "Log me in",
 				"success": "Login succeeded",
 				"error": "Login failed"
 		  },
