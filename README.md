@@ -3,7 +3,7 @@ Sample of todo item application in java. You can create, edit and delete todo ta
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development.
 
 ### Prerequisites
 The following technologies were used to develop this application: 
@@ -25,7 +25,7 @@ You have generated a spring-hibernate-template.war file in the *target* folder t
 
 Before starting your server, you have to run createtables.sql file (it is inside sql folder) on MySQL.  
 
-Copy the spring-hibernate-template.war from target folder to the location you deploy web applications in Tomcat (default folder is "$CATALINA_BASE/webapps"). 
+Copy the spring-hibernate-template.war from *target* folder to the location you deploy web applications in Tomcat (default folder is *$CATALINA_BASE/webapps*). 
 Start tomcat server on windos:
 
     %CATALINA_HOME%\bin\startup
@@ -52,7 +52,13 @@ Configure compiler option to generate JPA Metamodels automatically:
     1. Enter to the project options (right click over the project)
     2. Java Compiler -> Annotation Processing
 
-Configure the Annotation Processing like this [link](https://docs.jboss.org/hibernate/orm/5.0/topical/html/metamodelgen/MetamodelGenerator.html#_eclipse) and press ok button.
+Configure the Annotation Processing like this [link](https://docs.jboss.org/hibernate/orm/5.0/topical/html/metamodelgen/MetamodelGenerator.html#_eclipse), checking: 
+
+* **Enable project specific settings**
+* **Enable annotation processing**
+	* **Enable processing in editor**
+
+Put in **Generated source directory:** the following value *target/metamodel* and press ok button.
 
 Configure jpa option:
 
@@ -60,6 +66,12 @@ Configure jpa option:
     2. JPA
 
 Select in the section **Canonical metamodel (JPA 2.0)**,  the **Source Folder** to  **target/metamodel** and press ok button.
+
+Execute maven to clean and build the application.
+
+    $mvn clean install
+
+Refresh the project in eclipse.
 
 Before starting your server, you have to run createtables.sql file (it is inside sql folder) on MySQL.  
 

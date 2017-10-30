@@ -66,8 +66,13 @@
 			  		<div class="container animate-fade-up" style="width: auto;" ui-view=""></div>
 				</div>
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-2 text-right" ng-controller="latBarCtrl as latBar">
+				<ul ng-show="authenticated">
+					<li><h4>Logged as <span ng-show="user.username" class="text-info">{{ user.username }}</span></h4></li>
+					<li><h4><a ui-sref="login" ng-click="latBar.logout()"><span translate="index.logout"></span></a></h4></li>
+				</ul>
 			</div>
+			
 		</div>
 
 	</div>

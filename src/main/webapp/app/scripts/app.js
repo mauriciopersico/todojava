@@ -37,6 +37,15 @@ angular
     	loginService.logout();
     };
   })
+  .controller('latBarCtrl', function(loginService){
+    var latBar = this;
+
+    latBar.username = undefined;
+    
+    latBar.logout = function(){
+    	loginService.logout();
+    };
+  })
   .config(['$translateProvider', '$stateProvider','$urlRouterProvider', '$httpProvider', function ($translateProvider, $stateProvider, $urlRouterProvider, $httpProvider) {
 
   $urlRouterProvider.otherwise('/todos/list');
@@ -142,7 +151,7 @@ angular
 			  },
 			  "dashboard": {
 				  "title": "Bienvenido",
-				  "unauthenticated": "Inicie la sesión para ver el contenido"
+				  "unauthenticated": "Inicie la sesión para ver el contenido."
 			  },
 			  "user": {
 				  "title": "Usuarios",
@@ -150,7 +159,7 @@ angular
 				  "titlecreate": "Crear usuario",
 				  "list": "Lista",
 				  "create": "Crear",
-				  "unauthenticated": "Inicie la sesión para ver el contenido",
+				  "unauthenticated": "Inicie la sesión para ver el contenido.",
 				  "firstname": "Nombre",
 				  "lastname": "Apellido",
 				  "password": "Contraseña",
@@ -197,7 +206,7 @@ angular
 		  },
 		  "dashboard": {
 			  "title": "Welcome",
-			  "unauthenticated": "Login to see your content"
+			  "unauthenticated": "Login to see your content."
 		  },
 		  "user": {
 			  "title": "Users",
@@ -205,7 +214,7 @@ angular
 			  "titlecreate": "Create User",
 			  "list": "List",
 			  "create": "Create",
-			  "unauthenticated": "Login to see your content",
+			  "unauthenticated": "Login to see your content.",
 			  "firstname": "First Name",
 			  "lastname": "Last Name",
 			  "password": "Password",
