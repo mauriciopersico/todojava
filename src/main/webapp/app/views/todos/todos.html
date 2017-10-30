@@ -1,0 +1,13 @@
+<div ng-show="!authenticated" class="div-unauthenticated">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div>
+				    <h1><span translate="user.unauthenticated"></span></h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div ng-show="authenticated" ui-view></div>

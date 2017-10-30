@@ -1,0 +1,54 @@
+<div class="row" style="background: #FFF; padding: 15px;" >
+		<div class="row">
+		  <div class="col-md-12">
+		    <legend translate="todo.listtitle"></legend>
+		  </div>
+		</div>
+		
+		<br>
+		
+		<div class="table-responsive">
+			<table st-table="list.categories" class="table table-striped">
+			  <thead>
+<!-- 				  <tr> -->
+<!-- 					  <th translate="user.firstname"></th>				   -->
+<!-- 					  <th translate="user.firstname"></th> -->
+<!-- 					  <th translate="user.lastname"></th> -->
+<!-- 					  <th class="text-center" translate="user.actions"></th> -->
+<!-- 				  </tr> -->
+<!-- 				  <tr> -->
+<!-- 					<td colspan="2"> -->
+<!-- 					  <input st-search placeholder="{{ 'document.globarsearch' | translate}}" class="input-sm form-control" type="search"/> -->
+<!-- 					</td> -->
+<!-- 				  </tr> -->
+			  </thead>
+			  <tbody>
+				  <tr ng-repeat="todo in list.todos">
+				  	<td><input id="checkFollower" type="checkbox" ng-checked="todo.done" ng-disabled="true" aria-label="Follower input"></td>
+					<td>{{ todo.title }}</td>
+					<td>{{ todo.lastName}}</td>
+					<td class="text-center">
+						<a href="#/todos/edit/{{ todo.id }}" class="btn btn-sm btn-info" data-animation="am-fade-and-scale" data-title="edit" data-container="body" bs-tooltip>
+						  <i class="fa fa-pencil-square-o"></i>
+						</a>
+						<a href="" ng-click="list.delete(todo.id)" class="btn btn-sm btn-danger" data-animation="am-fade-and-scale" data-title="remove" data-container="body" bs-tooltip>
+						  <i class="fa fa-trash-o"></i>
+						</a>
+					</td>
+				</tr>
+			  </tbody>
+			  <tfoot>
+					<td colspan="7" class="text-center">
+					  <div st-items-by-page="5" st-pagination=""></div>
+					</td>
+			  </tfoot>
+		  </table>
+		  <div class="row">
+		  	<div class="col-md-3">
+		  		<a ui-sref="todos.create" class="btn btn-md btn-primary"><span translate="todo.buttoncreate"></span></a>
+		  	</div>
+		  </div>
+		</div>
+	<br>
+	<br>
+</div>

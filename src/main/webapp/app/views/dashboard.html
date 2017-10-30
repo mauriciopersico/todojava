@@ -1,0 +1,15 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="row">
+			<div ng-show="authenticated" class="col-md-12">
+				<h1><span translate="dashboard.title"></span> 
+				<span ng-show="user.username" class="text-info">{{ user.username }}</span>
+				</h1>
+			</div>
+			<div ng-show="!authenticated" class="div-unauthenticated">
+			    <h1><span translate="dashboard.unauthenticated"></span></h1>
+			</div>
+
+		</div>
+	</div>
+</div>

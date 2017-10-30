@@ -1,0 +1,49 @@
+<div class="row">
+	<div class="col-md-12">
+		<legend ng-show="editor.category.id" translate="user.titleedit"></legend>
+		<legend ng-hide="editor.category.id" translate="user.titlecreate"></legend>
+	</div>
+
+	<form class="form-horizontal" name="formCategory" role="form">
+		<div class="form-group">
+		    <label for="" class="col-md-2 control-label" translate="user.firstname"></label>
+		    <div class="col-md-4">
+		    	<input type="text" class="form-control" id="" placeholder="" ng-model="editor.rol.name" required/>
+		    </div>
+		</div>
+		
+	  	<div class="form-group">
+	      <label for="" class="col-md-2 control-label" translate="document.users"></label>
+			<div class="col-md-5">
+				<div class="input-group">
+	        		<input type="text" class="form-control" ng-model="newRol" ng-options="user as (user.firstName + ' ' + user.lastName) for user in editor.people" bs-typeahead>
+	        		<div class="input-group-btn">
+	        			<button type="button" class="btn btn-success" ng-click="editor.addRol(newRol); newRol = undefined;"><i class="fa fa-plus"></i>&nbsp;Add user</button>
+	        		</div>
+	        	</div>
+	        </div>
+
+	    </div>
+	    <div class="form-group">
+	    	<div class="col-md-10 col-md-offset-2">
+	    		<div class="category-list" ng-repeat="u in editor.rol.rols">
+					<div class="btn-group">
+					  <button type="button" class="btn">{{u.name}}</button>
+					  <button type="button" class="btn btn-danger" ng-click="editor.removeRol(u)"><i class="fa fa-trash-o"></i></button>
+					</div>
+	    			
+	    		</div>
+	    	</div>
+	    </div>
+		
+		<div class="form-group">
+			<div class="col-md-12">
+				<div class="pull-right">
+					<a ui-sref="categories.list" class="btn btn-default" translate="user.cancel"></a>
+					<button class="btn btn-primary" ng-show="editor.category.id" ng-click="formCategory.$valid && editor.update(editor.category)" translate="user.savechange"></button>
+					<button class="btn btn-primary" ng-hide="editor.category.id" ng-click="formCategory.$valid && editor.save(editor.category)" translate="user.save"></button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

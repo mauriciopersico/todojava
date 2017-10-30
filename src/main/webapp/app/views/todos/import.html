@@ -1,0 +1,26 @@
+<div class="row">
+	<span ng-show="importC.showProgressBar" ><i class="fa fa-spinner fa-spin"></i> Please wait, the file is uploading...</span>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<legend ng-hide="importC.showProgressBar">Import a XLSX File</legend>
+		<div class="row" ng-hide="importC.showProgressBar">
+		    <div class="col-md-offset-3 col-md-6 well well-sm">
+				<form class="form form-horizontal">
+					<div class="form-group">
+						<div class="col-md-6 col-md-offset-3">
+								<input type="file" file-model name="upload-file" class="form-control" ng-model="importC.xlsxFile" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-12">
+						   <div class="pull-right">
+								<button class="btn btn-primary" ng-click="importC.uploadFile()">Upload</button>
+						   </div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

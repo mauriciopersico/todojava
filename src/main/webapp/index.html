@@ -1,0 +1,137 @@
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="app/bower_components/bootstrap-custom/css/bootstrap.min.css">
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="app/bower_components/toastr/toastr.css">
+    <link rel="stylesheet" href="app/ceibo_components/ceibo.ui.css">
+    <link rel="stylesheet" href="app/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app/bower_components/angular-motion/dist/angular-motion.min.css">
+    <link rel="stylesheet" href="app/bower_components/angular-loading-bar/src/loading-bar.css">
+    <link rel="stylesheet" href="app/styles/main.css">
+    <link rel="stylesheet" href="app/ceibo_components/ceibo.ui.css">
+    <!-- endbuild -->
+
+
+  </head>
+  <body ng-app="cmspanelApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <nav class="navbar navbar-inverse navbar-static-top" style="margin-bottom:0" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="navBarCtrl as navBar">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="javascript:;" class="dropdown-toggle nav-user-dropdown" data-toggle="dropdown">{{user.username}} <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li ng-show="authenticated"><a class="nav-header-menu-link" ng-click="navBar.logout()"><span translate="index.logout"></span></a></li>
+                <li ng-show="!authenticated"><a class="nav-header-menu-link" ui-sref="login"><span translate="index.login"></span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+	<div class="container-fluid full-height">
+		<div class="row full-height-row content-overflow-row">
+			<div class="col-md-2 full-height lateral-nav-content">
+
+			</div>
+			<div class="detail-space col-md-8" >
+				<div class="page-wrap">
+			  		<!-- container of all state page -->
+			  		<div class="container animate-fade-up" style="width: auto;" ui-view=""></div>
+				</div>
+			</div>
+			<div class="col-md-2">
+			</div>
+		</div>
+
+	</div>
+		<footer class="footer text-right">
+          <!-- footer added------------------------------------------------------------------- -->
+          <!-- footer added------------------------------------------------------------------- -->
+        </footer>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="app/bower_components/jquery/dist/jquery.js"></script>
+    <script src="app/bower_components/angular/angular.js"></script>
+    <script src="app/bower_components/angular-loading-bar/src/loading-bar.js"></script>
+    <script src="app/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="app/bower_components/json3/lib/json3.js"></script>
+    <script src="app/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="app/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="app/bower_components/angular-smart-table/dist/smart-table.min.js"></script>
+    <script src="app/bower_components/angular-strap/dist/angular-strap.min.js"></script>
+    <script src="app/bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
+    <script src="app/bower_components/d3/d3.min.js"></script>
+    <script src="app/bower_components/toastr/toastr.min.js"></script>
+    <script src="app/bower_components/async/lib/async.js"></script>
+    <script src="app/ceibo_components/ceibo.ui.js"></script>
+    <script src="app/ceibo_components/fileReader.js"></script>
+    <script src="app/ceibo_components/d3directives.js"></script>
+    <script src="app/bower_components/angular-dynamic-locale/tmhDynamicLocale.min.js"></script>
+    <script src="app/bower_components/angular-translate/angular-translate.min.js"></script>
+    
+    
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="app/scripts/app.js"></script>
+        
+        <script src="app/scripts/modules/utils/module.js"></script>
+        <script src="app/scripts/modules/utils/auxFunctions.js"></script>
+        
+        <script src="app/scripts/modules/login/module.js"></script>
+        <script src="app/scripts/modules/login/service.js"></script>
+        <script src="app/scripts/modules/login/controller.js"></script>
+        
+        <script src="app/scripts/modules/todos/module.js"></script>
+        <script src="app/scripts/modules/todos/service.js"></script>
+        <script src="app/scripts/modules/todos/controller.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

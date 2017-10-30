@@ -1,0 +1,51 @@
+<div class="row" style="background: #FFF; padding: 15px;">
+	<div class="col-md-12">
+		<legend ng-show="editor.todo.id" translate="todo.titleedit"></legend>
+		<legend ng-hide="editor.todo.id" translate="todo.titlecreate"></legend>
+	</div>
+
+	<form class="form-horizontal" name="formTodo" role="form">
+		<!-- title -->
+		<div class="form-group">
+		    <label for="" class="col-md-2 control-label" translate="todo.titlef"></label>
+		    <div class="col-md-4">
+		    	<input type="text" class="form-control" id="" placeholder="" ng-model="editor.todo.title" required/>
+		    </div>
+		</div>
+		<!-- due date -->
+		<div class="form-group">
+		    <label for="" class="col-md-2 control-label" translate="todo.duedate"></label>
+		    <div class="col-md-4">
+			    <div class="input-group">
+			    	<input type="date" class="form-control" name="inputDueDate" ng-model="editor.todo.dueDate" placeholder="yyyy-MM-dd" required />
+			    	<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+		    	</div>
+		    </div>
+		</div>
+		<!-- description -->
+		<div class="form-group">
+		    <label for="" class="col-md-2 control-label" translate="todo.description"></label>
+		    <div class="col-md-4">
+		    	<textarea rows="3" class="form-control" id="" placeholder="" ng-model="editor.todo.description" required/>
+		    </div>
+		</div>
+		<!-- done -->
+		<div class="form-group">
+		    <label for="" class="col-md-2 control-label"></label>
+		    <div class="col-md-4" style="display: inline-flex;"">
+	    		<input style="width: auto;margin-top: auto;" type="checkbox" class="form-control" id="" ng-model="editor.todo.done"/>
+	    		<span style="padding-top: 7px;font-weight: bold;" translate="todo.done"></span>
+		    </div>
+		</div>
+		
+		<div class="form-group">
+			<div class="col-md-12">
+				<div class="pull-right">
+					<a ui-sref="todos.list" class="btn btn-default" translate="user.cancel"></a>
+					<button class="btn btn-primary" style="background-color: #07a989; border-color: transparent;" ng-show="editor.todo.id" ng-click="formTodo.$valid && editor.update(editor.todo)" translate="todo.savechange"></button>
+					<button class="btn btn-primary" style="background-color: #07a989; border-color: transparent;" ng-hide="editor.todo.id" ng-click="formTodo.$valid && editor.save(editor.todo)" translate="todo.save"></button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

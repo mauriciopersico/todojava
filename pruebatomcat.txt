@@ -1,0 +1,32 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.example:spring-hibernate-template:war:0.0.1-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.bsc.maven:maven-processor-plugin is missing. @ line 120, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building spring-hibernate-template 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> tomcat-maven-plugin:1.1:run (default-cli) > compile @ spring-hibernate-template >>>
+[INFO] 
+[INFO] --- maven-processor-plugin:3.1.0:process (process) @ spring-hibernate-template ---
+[INFO] diagnostic: Note: Hibernate JPA 2 Static-Metamodel Generator 1.2.0.Final
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ spring-hibernate-template ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ spring-hibernate-template ---
+[INFO] Compiling 2 source files to D:\trabajo\java\desafioweb\target\classes
+[INFO] 
+[INFO] <<< tomcat-maven-plugin:1.1:run (default-cli) < compile @ spring-hibernate-template <<<
+[INFO] 
+[INFO] --- tomcat-maven-plugin:1.1:run (default-cli) @ spring-hibernate-template ---
+[INFO] Running war on http://localhost:8080/spring-hibernate-template
+[INFO] Using existing Tomcat server configuration at D:\trabajo\java\desafioweb\target\tomcat
+¨Desea terminar el trabajo por lotes (S/N)? 
